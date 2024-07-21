@@ -10,4 +10,4 @@ const kNmbrBtnTxtClr = Color(0xFFFFFFFF);
 const kAcBtnTxtClr = Color(0xFFDC143C);
 const kEqualBtnTxtClr = Color(0xFFFFFFFF);
 const kDividerClr = Color(0x1FFFFFFF);
-const kBtnBorderClr = Color(0x1FFFFFFF);
+const kBtnBorderClr = Color(0xFF000000);

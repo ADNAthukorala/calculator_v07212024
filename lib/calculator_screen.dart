@@ -85,7 +85,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         clipBehavior: Clip.hardEdge,
         shape: OutlineInputBorder(
           borderRadius: BorderRadius.circular(100.0),
-          borderSide: const BorderSide(color: kBtnBorderClr),
+          borderSide: BorderSide.none,
         ),
         child: InkWell(
           onTap: () {},
@@ -95,6 +95,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               style: TextStyle(
                 color: getButtonTextColor(value),
                 fontSize: btnTxtSize,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ),
