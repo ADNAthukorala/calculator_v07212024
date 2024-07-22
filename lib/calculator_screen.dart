@@ -14,6 +14,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   String operator = ''; // +, -, x, /
   String number2 = ''; // ., 0-9
 
+  String themeColor = 'Blue';
+
   @override
   Widget build(BuildContext context) {
     /// Get screen width and height
@@ -124,6 +126,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     }
 
     if (value == Btn.adna) {
+      changeThemeColor();
       return;
     }
 
@@ -208,6 +211,17 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     });
   }
 
+  /// Change theme
+  void changeThemeColor() {
+    setState(() {
+      if (themeColor == 'Blue') {
+        themeColor = 'Green';
+      } else {
+        themeColor = 'Blue';
+      }
+    });
+  }
+
   /// Delete one from the end
   void delete() {
     if (number2.isNotEmpty) {
@@ -261,38 +275,32 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
 
   /// Get button color
   Color getButtonColor(value) {
-    return [
-      Btn.adna,
-      Btn.per,
-      Btn.divide,
-      Btn.multiply,
-      Btn.subtract,
-      Btn.add,
-    ].contains(value)
+    return [Btn.per, Btn.divide, Btn.multiply, Btn.subtract, Btn.add, Btn.adna]
+            .contains(value)
         ? kOprtrBtnClr
         : [Btn.ac].contains(value)
             ? kAcBtnClr
-            : [Btn.equal].contains(value)
+            : [Btn.equal].contains(value) && themeColor == 'Blue'
                 ? kEqualBtnClr
-                : kNmbrBtnClr;
+                : [Btn.equal].contains(value) && themeColor == 'Green'
+                    ? kGreenThemeClr
+                    : kNmbrBtnClr;
   }
 
   /// Get button text color
   Color getButtonTextColor(value) {
-    return [
-      Btn.per,
-      Btn.divide,
-      Btn.multiply,
-      Btn.subtract,
-      Btn.add,
-    ].contains(value)
+    return [Btn.per, Btn.divide, Btn.multiply, Btn.subtract, Btn.add, Btn.adna]
+                .contains(value) &&
+            themeColor == 'Blue'
         ? kOprtrBtnTxtClr
-        : [Btn.ac].contains(value)
-            ? kAcBtnTxtClr
-            : [Btn.equal].contains(value)
-                ? kEqualBtnTxtClr
-                : [Btn.adna].contains(value)
-                    ? kGreenThemeClr
+        : [Btn.per, Btn.divide, Btn.multiply, Btn.subtract, Btn.add, Btn.adna]
+                    .contains(value) &&
+                themeColor == 'Green'
+            ? kGreenThemeClr
+            : [Btn.ac].contains(value)
+                ? kAcBtnTxtClr
+                : [Btn.equal].contains(value)
+                    ? kEqualBtnTxtClr
                     : kNmbrBtnTxtClr;
   }
 }
