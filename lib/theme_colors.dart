@@ -13,4 +13,4 @@ const kEqualBtnTxtClr = Color(0xFFFFFFFF);
 const kDividerClr = Color(0x1FFFFFFF);
 const kBtnBorderClr = Color(0xFF000000);
 
-const kGreenTheme = Color(0xFF4CBB17);
+const kGreenThemeClr = Color(0xFF4CBB17);

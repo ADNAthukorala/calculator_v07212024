@@ -101,7 +101,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               value,
               style: TextStyle(
                 color: getButtonTextColor(value),
-                fontSize: btnTxtSize,
+                fontSize: [Btn.adna].contains(value) ? 14.0 : btnTxtSize,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -280,7 +280,6 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   /// Get button text color
   Color getButtonTextColor(value) {
     return [
-      Btn.adna,
       Btn.per,
       Btn.divide,
       Btn.multiply,
@@ -292,6 +291,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             ? kAcBtnTxtClr
             : [Btn.equal].contains(value)
                 ? kEqualBtnTxtClr
-                : kNmbrBtnTxtClr;
+                : [Btn.adna].contains(value)
+                    ? kGreenThemeClr
+                    : kNmbrBtnTxtClr;
   }
 }
