@@ -27,6 +27,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     double btnTxtSize = screenHeight * 0.03;
 
     return Scaffold(
+      backgroundColor: kBckgrndClr,
       body: SafeArea(
         child: Column(
           children: [
@@ -122,6 +123,12 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
       return;
     }
 
+    if (value == Btn.adna) {
+      clearAll();
+      changeTheme();
+      return;
+    }
+
     if (value == Btn.per) {
       convertToPercentage();
       return;
@@ -162,7 +169,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     }
 
     setState(() {
-      number1 = result.toStringAsPrecision(3);
+      number1 = result.toString();
 
       if (number1.endsWith(".0")) {
         number1 = number1.substring(0, number1.length - 2);
@@ -196,6 +203,15 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
 
   /// Clears all output
   void clearAll() {
+    setState(() {
+      number1 = "";
+      operator = "";
+      number2 = "";
+    });
+  }
+
+  /// Change theme
+  void changeTheme() {
     setState(() {
       number1 = "";
       operator = "";
@@ -257,7 +273,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   /// Get button color
   Color getButtonColor(value) {
     return [
-      Btn.negOrPos,
+      Btn.adna,
       Btn.per,
       Btn.divide,
       Btn.multiply,
@@ -275,7 +291,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   /// Get button text color
   Color getButtonTextColor(value) {
     return [
-      Btn.negOrPos,
+      Btn.adna,
       Btn.per,
       Btn.divide,
       Btn.multiply,
