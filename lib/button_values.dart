@@ -1,6 +1,6 @@
 class Btn {
   static const String ac = 'AC';
-  static const String negOrPos = '+/-';
+  static const String adna = 'ADNA';
   static const String per = '%';
   static const String divide = '÷';
   static const String multiply = 'x';
@@ -23,7 +23,7 @@ class Btn {
 
   static const List<String> buttonValues = [
     ac,
-    negOrPos,
+    adna,
     per,
     divide,
     n7,

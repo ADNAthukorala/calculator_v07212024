@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+const kBckgrndClr = Color(0xFF000000);
 const kNmbrBtnClr = Color(0xFF1B1F2A);
 const kAcBtnClr = Color(0xFF1B1F2A);
 const kOprtrBtnClr = Color(0xFF1B1F2A);
@@ -11,3 +12,5 @@ const kAcBtnTxtClr = Color(0xFFDC143C);
 const kEqualBtnTxtClr = Color(0xFFFFFFFF);
 const kDividerClr = Color(0x1FFFFFFF);
 const kBtnBorderClr = Color(0xFF000000);
+
+const kGreenTheme = Color(0xFF4CBB17);
