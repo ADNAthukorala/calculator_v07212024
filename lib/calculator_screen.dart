@@ -124,8 +124,6 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     }
 
     if (value == Btn.adna) {
-      clearAll();
-      changeTheme();
       return;
     }
 
@@ -210,15 +208,6 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     });
   }
 
-  /// Change theme
-  void changeTheme() {
-    setState(() {
-      number1 = "";
-      operator = "";
-      number2 = "";
-    });
-  }
-
   /// Delete one from the end
   void delete() {
     if (number2.isNotEmpty) {
@@ -278,7 +267,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
       Btn.divide,
       Btn.multiply,
       Btn.subtract,
-      Btn.add
+      Btn.add,
     ].contains(value)
         ? kOprtrBtnClr
         : [Btn.ac].contains(value)
@@ -296,7 +285,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
       Btn.divide,
       Btn.multiply,
       Btn.subtract,
-      Btn.add
+      Btn.add,
     ].contains(value)
         ? kOprtrBtnTxtClr
         : [Btn.ac].contains(value)
